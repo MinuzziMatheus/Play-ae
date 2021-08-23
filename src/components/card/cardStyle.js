@@ -1,53 +1,6 @@
 import styled from 'styled-components';
 
-
-export const SearchContainer = styled.div`
-    width: 98%;
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-
-    .favoritePageBtn{
-        background-color: transparent;
-        border: 1px solid var(--purple);
-        color: #FFF;
-        border-radius: 10px;
-        padding: 10px;
-        margin-right: 20px;
-        transition: 0.5s ease-in-out
-    }
-
-    .favoritePageBtn:hover{
-        background-color: var(--purple);
-    }
-`;
-
-export const Search = styled.input`
-    width: 30%;
-    height: 50px;
-    border-radius: 10px;
-    color: var(--purple);
-    font-weight: bold;
-    padding: 5px;
-`;
-
-export const Container = styled.section`
-    display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    max-width: 100%;
-
-    .loading{
-        color: #FFF;
-        font-weight: bold;
-    }
-`;
-
-export const Card = styled.div`
+export const CardBody = styled.div`
    display: flex;
    flex-direction: column;
    position: relative;
@@ -56,15 +9,45 @@ export const Card = styled.div`
    width: 250px;
    height: 300px;
    border-radius: 20px;
+   text-align: center;
 
    background-color: var(--gray);
    box-shadow: 0 0 10px rgba(0,0,0, 0.8);
 
-   .albumImg{
-       border-top-left-radius: 20px;
-       border-top-right-radius: 20px;
-       height: 50%;
-   }
+   .cardImage{
+        max-width:100%;
+        max-height:100%;
+    }
+
+   .cardImage img {
+        width: 100%;
+        height: 168px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+
+    .cardImage span{
+        position: absolute;
+        text-align: center;
+        height: 56%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        line-height: 10;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        background-color: #5a5959;
+        color: #FFF;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .cardImage span:hover{
+        opacity: 0.4;
+    }
+
+
 
    .title{
        color: var(--green);
@@ -74,8 +57,14 @@ export const Card = styled.div`
    }
 
    .artistName{
+        color: var(--purple);
+        font-weight: bold;
+        margin: 20px 0 0 5px;
+    }
+
+    .duration{
         color: #FFF;
-        margin: 5px 0 0 5px;
+        font-size: 10px;
     }
 
     .faFullHeart{
@@ -104,7 +93,7 @@ export const CardFooter =  styled.footer`
     border-bottom-left-radius: 20px;
     width: 100%;
     height: 10%;
-    margin-top: 50px;
+    margin-top: 20px;
 
     audio{
         background-color: var(--gray);
@@ -116,9 +105,6 @@ export const CardFooter =  styled.footer`
 export const Player = styled.button`
     display: flex;
     align-items: center;
-    /* position: absolute;
-    bottom: 0px;
-    left: 0; */
 
     width: 50px;
     height: 50px;
@@ -129,5 +115,8 @@ export const Player = styled.button`
         margin: auto;
         color: #FFF
     }
-`;
 
+    audio {
+        display: hidden;
+    }
+`;
