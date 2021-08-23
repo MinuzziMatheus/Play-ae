@@ -37,14 +37,15 @@ export const CardBody = styled.div`
         line-height: 10;
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
-        background-color: #5a5959;
-        color: #FFF;
+        background-color: #1d1b1b;
+        color: var(--purple);
+        font-weight: bold;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
     }
 
     .cardImage span:hover{
-        opacity: 0.4;
+        opacity: 0.8;
     }
 
 
