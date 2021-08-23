@@ -58,15 +58,7 @@ export default function ListSongs(){
       document.getElementById("add"+song.id).style.display = 'none';
       dispatch({ type: 'ADD', song: song});
    }
-
-   // const teste = (song) => {
-   //    if(isFavorite){
-   //       setIsFavorite(song.favorite = false);
-   //    }else {
-   //       setIsFavorite(song.favorite = true);
-   //    }
-   // }
-
+   
    function callFavoritePageHandle(){
       setCallFavoritePage(!callFavoritePage);
    }
